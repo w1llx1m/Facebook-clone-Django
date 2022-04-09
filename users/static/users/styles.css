@@ -1,0 +1,94 @@
+body{
+	background-color: #A9A9A9;
+}
+
+div{
+	display: inline-block;
+}
+
+form{
+	height: 200px;
+}
+
+.frt{
+	color: #1877f2;
+	font-family: SFProText-Semibold, Helvetica, Arial, sans-serif;
+	font-size: 17px;
+	line-height: 20px;
+	margin-left: 20px;
+	margin-bottom: 10px;
+}
+
+
+
+#id_username,#id_password{
+	font-size: 17px;
+	padding: 14px 16px;
+	width: 330px;
+	border-radius: 6px;
+	margin: 10px;
+	border-color: #dddfe2;
+}
+
+
+.form-detail{
+	margin: 10px;
+	margin-top: 10px;
+	height: 200px;
+
+}
+
+.button-login{
+	background-color: #1877f2;
+	border: none;
+	border-radius: 6px;
+	font-size: 20px;
+	line-height: 48px;
+	padding: 0 16px;
+	width: 332px;
+	margin-bottom: 10px;
+
+}
+#button-create{
+	background-color: #36a420;
+	border: none;
+	border-radius: 6px;
+	font-size: 20px;
+	line-height: 48px;
+	padding: 0 16px;
+	width: 332px;
+	margin-bottom: 10px;
+}
+.login-inteiro{
+	font-size: 0;
+	text-align: center;
+	margin-top: 300px;
+	
+
+}
+
+.face-logo{
+	width: 350px;
+	height: 106px;
+}
+
+.face-form{
+	background-color: #fff;
+	border-radius: 10px;
+	margin-left: 100px;
+
+}
+
+.text{
+	font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
+	font-size: 28px;
+	font-weight: normal;
+	line-height: 32px;
+	width: 500px;
+}
+
+.face-text{
+	margin-left: 300px;
+	text-align: left;
+}
+

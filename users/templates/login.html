@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+  <head>
+    <title>Título da página</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'users/styles.css' %}">
+    <script type="text/javascript" src="{% static '/users/index.js'%}"></script>
+  </head>
+  <body>
+    <nav class="nav-bar"></nav>
+    <div class="login-inteiro">
+      <div class="face-text">
+        <div class="face-logo">
+          <img src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg">
+        </div>
+        <h2 class="text">The Facebook helps you to connect and share things with your friends. Login using your username and password or create an account.</h2>
+      </div><!--
+      --><div class="face-form">
+        {% block content %}
+        <form  id="form" class="form-detail" action="." method="POST">{% csrf_token %}
+
+          <input placeholder="username..." type="text" name="username" maxlength="150" id="id_username"><br>
+
+          <input placeholder="password..." type="password" name="password" id="id_password"><br>
+
+          <input class="button-login" type="submit" value="Sing In"><br>
+         
+        </form>
+        {% endblock %}
+
+        <a class="frt" href="#">
+            Forgot account?
+          </a>
+
+          <a class="frt" href="../register/">
+            Create an account
+            
+          </a>
+         
+    
+      </div>
+    </div><br>
+          
+
+  </body>
+</html>

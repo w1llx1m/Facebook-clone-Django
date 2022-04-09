@@ -1,0 +1,41 @@
+<!doctype html>
+
+{% load static %}
+<html id="facebook" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="{% static 'users/login.css' %}">
+</head>
+<body>
+	<div>
+		<div class="face-logo">
+			<img src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg">
+		</div>
+		<div class="login-info">
+			<div class="create-new">Create a new account<div>
+			<div class="it-go">It’s quick and easy.</div>
+			<form method="POST" action="">
+				{% csrf_token%}
+				<div>{{form.username}}</div>
+				<div>{{form.email}}</div>
+				<div>{{form.password1}}</div>
+				<div>{{form.password2}}</div>
+
+				<div>
+				<p>By clicking Sign Up, you agree to our Terms, Data Policy and Cookies Policy. You may receive SMS Notifications from us and can opt out any time.</p>
+				</div>
+
+				<input class="button-register" type="submit" name="Create User" value="Sing Up"><br>
+				<a class="have" href="../login/">Already have a account?</a>
+				{% for mesage in mensagers %}
+				<p class="pequena">{{mesage}}</p>
+				{% endfor %}	
+				<p class="pequena">{{form.errors}}</p>
+
+				
+			</form>
+			
+		</div>
+	</div>
+</body>
