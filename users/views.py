@@ -52,5 +52,8 @@ class UserAuth(View):
 def home_view(request, *args, **kwars):
 	template_name = 'home.html'
 	context = {}
+	if not request.user.is_authenticated:
+		return redirect('login-user')
 	return render(request, template_name, context)
+
 
