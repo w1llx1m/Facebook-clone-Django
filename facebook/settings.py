@@ -21,20 +21,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # set the configs to run
+
 env = environ.Env(
     """
     EX:
     
     DEBUG=(bool, False)
     """
+    
 )
 
+SECRET_KEY = env(SECRET_KEY)
 
 
-SECRET_KEY = env('SECRET_KEY')
-
-
-DEBUG = env('DEBUG')
+DEBUG = env(DEBUG)
 
 ALLOWED_HOSTS = []
 
