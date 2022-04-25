@@ -1,9 +1,3 @@
-Facebook clone
-
-Read requirements.txt to see what you'll need.
-
-
-
 <h1>Web app with Django - Facebook Clone</h1>
 
 <br>
