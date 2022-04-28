@@ -21,9 +21,13 @@
 <body>
 	<div>
 		<nav class="nav">
+			{% if not user.is_authenticated%}
       <a class="nav-link active" aria-current="page" href="/register">Sing Up</a>
       <a class="nav-link active" aria-current="page" href="/login">Login</a>
+      {% endif %}
+      {% if user.is_authenticated %}
       <a class="nav-link active" aria-current="page" href="/">Home</a>
+      {% endif %}
     </nav>
 		<div class="face-logo">
 			<img src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg">

@@ -13,11 +13,15 @@ class UserCreation(View):
 	template_name = 'creation_user.html'
 
 	def get(self, request, *args, **kwars):
+		if request.user.is_authenticated:
+			redirect('home')
 		form = CreateUserForm()
 		context = {'form': form}
 		return render(request, self.template_name, context)
 
 	def post(self, request, *args, **kwars):
+		if request.user.is_authenticated:
+			redirect('home')
 		form = CreateUserForm(request.POST or None)
 		context = {'form': form}
 		if form.is_valid():
@@ -33,11 +37,15 @@ class UserAuth(View):
 	template_name = 'login.html'
 
 	def get(self, request, *args, **kwars):
+		if request.user.is_authenticated:
+			redirect('home')
 		form = CreateUserForm()
-		context = {'form': form}
+		context = {'form': form, 'user': request.user}
 		return render(request, self.template_name, context)
 	
 	def post(self,request, *args, **kwars):
+		if request.user.is_authenticated:
+			redirect('home')
 		username = request.POST.get('username')
 		passwd = request.POST.get('password')
 		context = {}
@@ -51,7 +59,7 @@ class UserAuth(View):
 @require_http_methods(["GET"])
 def home_view(request, *args, **kwars):
 	template_name = 'home.html'
-	context = {}
+	context = {'user': request.user}
 	if not request.user.is_authenticated:
 		return redirect('login-user')
 	return render(request, template_name, context)
